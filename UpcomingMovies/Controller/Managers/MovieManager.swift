@@ -14,8 +14,6 @@ import Gloss
 
 class MovieManager: NSObject {
 
-//https://api.themoviedb.org/3/discover/movie/?certification_country=US&certification=R&sort_by=vote_average.desc&api_key=e67a81b1117e0d8fc734bbcdd2579d01
-
     class func getMoviesWithAverageGreaterThan(average:Int, page:Int, completion : @escaping (Array<Movie>?, Int, NSError?) -> ()) {
         var listMovies: Array<Movie> = []
         
@@ -23,9 +21,11 @@ class MovieManager: NSObject {
             .responseJSON { response in
                 switch response.result {
                 case .success:
-                    if let repoJSON = response.result.value {
-                        let jsonArray = repoJSON as? NSMutableArray
-                        for item in jsonArray! {
+                    if let repoJSON = response.result.value as? JSON {
+                        guard let jsonArray = repoJSON["results"] as? [Any]  else {
+                            return
+                        }
+                        for item in jsonArray {
                             guard let movie = Movie(json: item as! JSON) else
                             {
                                 print("Issue deserializing model")
@@ -33,7 +33,7 @@ class MovieManager: NSObject {
                             }
                             listMovies.append(movie)
                         }
-                        if let paginationCount = response.response?.allHeaderFields["x-pagination-page-count"] as? String {
+                        if let paginationCount = repoJSON["total_pages"] as? String {
                             completion(listMovies, Int(paginationCount)!, nil)
                         }
                         else {
@@ -45,8 +45,6 @@ class MovieManager: NSObject {
                     completion(nil, 0, error as NSError?)
                     break
                 }
-
-        
         }
     }
 

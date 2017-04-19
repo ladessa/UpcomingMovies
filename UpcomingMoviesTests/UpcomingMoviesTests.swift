@@ -21,16 +21,16 @@ class UpcomingMoviesTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testGetMoviesWithAverageGreaterThan() {
+        let average : Int = 5
+        let page : Int = 1
+                       
+        MovieManager.getMoviesWithAverageGreaterThan(average: average, page: page, completion: { (listMovies : Array<Movie>?,totalPages, error) in
+            XCTAssert(listMovies != nil && (listMovies?.count)! > 0)
+            XCTAssertNil(error)
+        })
         }
-    }
-    
+
 }

@@ -13,6 +13,8 @@ import Alamofire
 import JGProgressHUD
 
 class BestMoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+
+
     
     
     //MARK: var declarations and IBOutlets
@@ -42,18 +44,55 @@ class BestMoviesViewController: UIViewController, UITableViewDelegate, UITableVi
         progressHUD?.textLabel.text = "Loading movies..."
         progressHUD?.show(in: view, animated: true)
         
-        MovieManager.getPopularMovies(currentPage, completion: { (listMovies : Array<Movie>?,totalPages, error) in
+        MovieManager.getMoviesWithAverageGreaterThan(average: 5, page: currentPage, completion: { (listMovies : Array<Movie>?,totalPages, error) in
             if listMovies != nil {
-                self.listMovies.appendContentsOf(listMovies!)
+                self.listMovies.append(contentsOf: listMovies!)
                 self.totalPages = totalPages
-                self.progressHUD.dismiss()
+                self.progressHUD?.dismiss()
                 self.tbMovies.reloadData()
                 self.loadingMore = false
             } else {
-                self.progressHUD.dismiss()
-                Helper.displayAlert("Error!", message: "Error trying to get movies. Please, try again later.", controller: self)
+                self.progressHUD?.dismiss()
+                Helper.displayAlert(title: "Error!", message: "Error trying to get movies. Please, try again later.", controller: self)
             }
         })
+    }
+    
+    //MARK:  Tableview
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.listMovies.count
+    }
+    
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: MovieCell = (tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath as IndexPath) as! MovieCell)
+        
+        let movie = listMovies[indexPath.row]
+        let thumbUrl = URL(string: ConstantHelper.kThumbURL)?.appendingPathComponent(movie.poster_path!)
+
+        cell.title.text = movie.title
+        cell.rating.text  = "\(movie.vote_average!)"
+        cell.thumb.sd_setImage(with: thumbUrl, placeholderImage: UIImage(named:"trivago_loading"))//SDWebImage library: A guarantee that the same URL won't be downloaded several times - cache management
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastRowIndex = self.listMovies.count - 1
+        if !self.loadingMore && indexPath.row == lastRowIndex - 1 { //check if it's the last cell
+            if(self.currentPage < self.totalPages) { // check if there's more movies to load
+                self.loadingMore = true
+                self.currentPage += 1
+                getMovies()
+            }
+            else {
+                self.tbMovies.tableFooterView = nil; //there's no more movies to load
+            }
+            
+        }
     }
 }
 
