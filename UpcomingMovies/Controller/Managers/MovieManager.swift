@@ -33,8 +33,8 @@ class MovieManager: NSObject {
                             }
                             listMovies.append(movie)
                         }
-                        if let paginationCount = repoJSON["total_pages"] as? String {
-                            completion(listMovies, Int(paginationCount)!, nil)
+                        if let paginationCount = repoJSON["total_pages"] as? Int {
+                            completion(listMovies, paginationCount, nil)
                         }
                         else {
                             completion(listMovies, 0, nil)

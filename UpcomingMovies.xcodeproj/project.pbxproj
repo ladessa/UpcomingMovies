@@ -30,6 +30,8 @@
 		36826F531EA7982900FBF10A /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 36826F431EA7982900FBF10A /* UIImageView+HighlightedWebCache.m */; };
 		36826F541EA7982900FBF10A /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 36826F451EA7982900FBF10A /* UIImageView+WebCache.m */; };
 		36826F551EA7982900FBF10A /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36826F471EA7982900FBF10A /* UIView+WebCacheOperation.m */; };
+		36826F581EA79A0B00FBF10A /* nextel_loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 36826F561EA79A0B00FBF10A /* nextel_loading.png */; };
+		36826F591EA79A0B00FBF10A /* nextel_loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36826F571EA79A0B00FBF10A /* nextel_loading@2x.png */; };
 		36D010E11EA6959E004B5341 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36D010DF1EA6959E004B5341 /* Main.storyboard */; };
 		36D010E61EA6959E004B5341 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36D010E51EA6959E004B5341 /* Assets.xcassets */; };
 		36D010E91EA6959E004B5341 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36D010E71EA6959E004B5341 /* LaunchScreen.storyboard */; };
@@ -89,6 +91,8 @@
 		36826F451EA7982900FBF10A /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "Controller/ThirdPartLibrary/SDWebImage/UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		36826F461EA7982900FBF10A /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "Controller/ThirdPartLibrary/SDWebImage/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		36826F471EA7982900FBF10A /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "Controller/ThirdPartLibrary/SDWebImage/UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		36826F561EA79A0B00FBF10A /* nextel_loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextel_loading.png; path = View/Resources/Images/nextel_loading.png; sourceTree = "<group>"; };
+		36826F571EA79A0B00FBF10A /* nextel_loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nextel_loading@2x.png"; path = "View/Resources/Images/nextel_loading@2x.png"; sourceTree = "<group>"; };
 		36D010D81EA6959E004B5341 /* UpcomingMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpcomingMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36D010E01EA6959E004B5341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36D010E51EA6959E004B5341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				36826F1B1EA78BA300FBF10A /* btn_search.png */,
+				36826F561EA79A0B00FBF10A /* nextel_loading.png */,
+				36826F571EA79A0B00FBF10A /* nextel_loading@2x.png */,
 				36826F1C1EA78BA300FBF10A /* btn_search@2x.png */,
 			);
 			name = Images;
@@ -448,6 +454,8 @@
 				36826F1E1EA78BA300FBF10A /* btn_search@2x.png in Resources */,
 				36D010E61EA6959E004B5341 /* Assets.xcassets in Resources */,
 				36826F1D1EA78BA300FBF10A /* btn_search.png in Resources */,
+				36826F591EA79A0B00FBF10A /* nextel_loading@2x.png in Resources */,
+				36826F581EA79A0B00FBF10A /* nextel_loading.png in Resources */,
 				36D010E11EA6959E004B5341 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
