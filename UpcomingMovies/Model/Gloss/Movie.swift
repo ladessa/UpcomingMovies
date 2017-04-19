@@ -15,6 +15,17 @@ struct Movie: Glossy {
     let overview : String?
     let poster_path : String?
     
+    func movieDaoFromMovie() -> MovieDAO{
+        let movieDAO = MovieDAO()
+        let voteInt = NSDecimalNumber.init(value: self.vote_average!)
+        movieDAO.title = self.title
+        movieDAO.overview =  self.overview 
+        movieDAO.poster_path = self.poster_path
+        movieDAO.vote_average = voteInt
+
+        return movieDAO
+    }
+    
     // MARK: - Deserialization
     init?(json: JSON) {
         guard let title: String = "title" <~~ json, //verifica se todos os campos vieram preenchidos
@@ -43,6 +54,9 @@ struct Movie: Glossy {
             "poster_path" ~~> self.poster_path
             ])
     }
+    
+    
+   
 
 }
 

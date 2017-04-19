@@ -14,8 +14,6 @@ import JGProgressHUD
 
 class BestMoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
-
-    
     
     //MARK: var declarations and IBOutlets
     @IBOutlet weak var  tbMovies : UITableView!
@@ -127,6 +125,14 @@ class BestMoviesViewController: UIViewController, UITableViewDelegate, UITableVi
             }
             
         }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let movieSelected = localMovies[indexPath.row] as! MovieDAO
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsView") as! DetailsViewController
+            vc.movieSelected = movieSelected
+            self.present(vc, animated: true, completion: nil)
     }
 }
 

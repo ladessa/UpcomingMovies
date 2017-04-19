@@ -86,6 +86,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movieSelected = listSearch[indexPath.row]
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsView") as! DetailsViewController
+        vc.movieSelected = movieSelected.movieDaoFromMovie()
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     //MARK: Search functions
     func clearSearch() {
         self.listSearch = []

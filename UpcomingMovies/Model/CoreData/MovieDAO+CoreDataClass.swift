@@ -12,5 +12,15 @@ import CoreData
 
 @objc(MovieDAO)
 public class MovieDAO: NSManagedObject {
+    
+    init?(movie: Movie) {
+        self.title = movie.title
+        self.overview = movie.overview
+        self.poster_path = movie.poster_path
+        
+        self.vote_average = movie.vote_average as Int?
+    }
 
 }
+
+

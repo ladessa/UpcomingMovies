@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		08ED3F2097399EEC0A36E3B4 /* Pods_UpcomingMoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41912CC64D8B376C9D7F13CC /* Pods_UpcomingMoviesTests.framework */; };
 		363F0F101EA79D2A00700787 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F0F0F1EA79D2A00700787 /* SearchViewController.swift */; };
+		363F0F221EA7C3BE00700787 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F0F211EA7C3BE00700787 /* DetailsViewController.swift */; };
 		36826F161EA7866700FBF10A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D011161EA6A221004B5341 /* Movie.swift */; };
 		36826F171EA7867000FBF10A /* ConstantHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D011191EA6A634004B5341 /* ConstantHelper.swift */; };
 		36826F181EA7872500FBF10A /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D011141EA69FEF004B5341 /* MovieManager.swift */; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		363F0F0F1EA79D2A00700787 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Controller/ViewControllers/SearchViewController.swift; sourceTree = "<group>"; };
+		363F0F211EA7C3BE00700787 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailsViewController.swift; path = Controller/ViewControllers/DetailsViewController.swift; sourceTree = "<group>"; };
 		36826F1B1EA78BA300FBF10A /* btn_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_search.png; path = View/Resources/Images/btn_search.png; sourceTree = "<group>"; };
 		36826F1C1EA78BA300FBF10A /* btn_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_search@2x.png"; path = "View/Resources/Images/btn_search@2x.png"; sourceTree = "<group>"; };
 		36826F201EA78C9500FBF10A /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieCell.swift; path = "View/Custom Cells/MovieCell.swift"; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 			children = (
 				36D0110B1EA69C73004B5341 /* BestMoviesViewController.swift */,
 				363F0F0F1EA79D2A00700787 /* SearchViewController.swift */,
+				363F0F211EA7C3BE00700787 /* DetailsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				36826F251EA7963700FBF10A /* Helper.swift in Sources */,
 				36826F491EA7982900FBF10A /* SDImageCache.m in Sources */,
 				363F0F101EA79D2A00700787 /* SearchViewController.swift in Sources */,
+				363F0F221EA7C3BE00700787 /* DetailsViewController.swift in Sources */,
 				36D0110A1EA698ED004B5341 /* AppDelegate.swift in Sources */,
 				36826F231EA78C9500FBF10A /* MovieSearchCell.swift in Sources */,
 				36826F511EA7982900FBF10A /* UIImage+GIF.m in Sources */,
