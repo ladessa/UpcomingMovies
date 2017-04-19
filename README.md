@@ -17,6 +17,6 @@ gem install slather
 
 2) run in terminal
 
-slather coverage --html --scheme UpcomingMovies --workspace /Users/brill/UpcomingMovies/UpcomingMovies.xcworkspace /Users/brill/UpcomingMovies/UpcomingMovies.xcodeproj
+slather coverage --html --scheme UpcomingMovies --workspace path/to/workspace.xcworkspace path/to/project.xcodeproj
 
 3) open html file
