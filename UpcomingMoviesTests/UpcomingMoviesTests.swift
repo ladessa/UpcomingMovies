@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import CoreData
+
 @testable import UpcomingMovies
 
 class UpcomingMoviesTests: XCTestCase {
@@ -40,8 +42,22 @@ class UpcomingMoviesTests: XCTestCase {
         })
     }
     
-    func testFirstTimeLocal() {
+    func testGetMoviesLocally() {
+        let managedContext = Helper.setUpInMemoryManagedObjectContext()
         
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "MovieDAO")
+        
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            print(results)
+        } catch let error as NSError {
+            XCTAssertNil(error)
+            print("Could not list movies \(error), \(error.userInfo)")
+        }
+        catch {
+            XCTFail()
+            // Catch any other errors
+        }
     }
 
 }
