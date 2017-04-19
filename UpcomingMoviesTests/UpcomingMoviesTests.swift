@@ -21,16 +21,27 @@ class UpcomingMoviesTests: XCTestCase {
         super.tearDown()
     }
     
-    
-    
     func testGetMoviesWithAverageGreaterThan() {
         let average : Int = 5
         let page : Int = 1
                        
-        MovieManager.getMoviesWithAverageGreaterThan(average: average, page: page, completion: { (listMovies : Array<Movie>?,totalPages, error) in
-            XCTAssert(listMovies != nil && (listMovies?.count)! > 0)
+        MovieManager.getMoviesWithAverageGreaterThan(average: average, page: page, completion: { (totalPages, error) in
             XCTAssertNil(error)
         })
         }
+    
+    func testGetMoviesWithtext() {
+        let page : Int = 1
+        let textSearch : String = "Hello"
+        
+        MovieManager.searchMoviesWithText(text: textSearch, page: page,  completion: { (listMovies : Array<Movie>?,totalPages, error) in
+            XCTAssertNil(error)
+            XCTAssert(listMovies != nil && (listMovies?.count)! > 0)
+        })
+    }
+    
+    func testFirstTimeLocal() {
+        
+    }
 
 }

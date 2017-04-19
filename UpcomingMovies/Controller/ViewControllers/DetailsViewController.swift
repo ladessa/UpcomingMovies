@@ -27,7 +27,6 @@ class DetailsViewController: UIViewController {
     
     
     //Mark:  Override Methods
-    
     override func viewDidLoad() {
         self.lblTitle.text = movieSelected.title
         self.txtOverview.text = movieSelected.overview

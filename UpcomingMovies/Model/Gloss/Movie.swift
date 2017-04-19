@@ -8,6 +8,7 @@
 
 import Foundation
 import Gloss
+import CoreData
 
 struct Movie: Glossy {
     let title : String?
@@ -16,7 +17,14 @@ struct Movie: Glossy {
     let poster_path : String?
     
     func movieDaoFromMovie() -> MovieDAO{
-        let movieDAO = MovieDAO()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let entity =  NSEntityDescription.entity(forEntityName: "MovieDAO",
+                                                 in:managedContext)
+        
+        let movieDAO = NSManagedObject(entity: entity!,
+                                       insertInto: managedContext) as! MovieDAO
+
         let voteInt = NSDecimalNumber.init(value: self.vote_average!)
         movieDAO.title = self.title
         movieDAO.overview =  self.overview 
