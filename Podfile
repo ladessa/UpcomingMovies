@@ -13,5 +13,8 @@ target 'UpcomingMovies' do
   pod 'Alamofire'
   pod 'JGProgressHUD'
   end
+  
+  plugin 'slather'
+
 
 end
