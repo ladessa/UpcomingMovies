@@ -13,7 +13,7 @@ import UIKit
 
 class MovieSearchCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var year: UILabel!
+    @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var thumb: UIImageView!
     @IBOutlet weak var overview: UILabel!
 

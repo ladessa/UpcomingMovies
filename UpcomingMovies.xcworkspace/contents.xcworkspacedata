@@ -7,4 +7,10 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:UpcomingMovies/Model/CoreData/MovieDAO+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:UpcomingMovies/Model/CoreData/MovieDAO+CoreDataProperties.swift">
+   </FileRef>
 </Workspace>
